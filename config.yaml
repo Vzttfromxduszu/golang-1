@@ -1,0 +1,9 @@
+## 启动端口号
+server:
+  post: 8081
+
+## 数据库配置
+mysql:
+  username: root
+  password: Atonng...
+  url: tcp(localhost:3306)/blog_db?charset=utf8&parseTime=True&loc=Local
