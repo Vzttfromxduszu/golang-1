@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"strconv"
 
+	stripmd "github.com/Vzttfromxduszu/golang-1.git/common/stripmd"
 	models "github.com/Vzttfromxduszu/golang-1.git/model"
 	"github.com/Vzttfromxduszu/golang-1.git/service"
 	gintemplate "github.com/foolin/gin-template"
@@ -88,7 +89,7 @@ func SavePost(c *gin.Context) {
 	thumbnail := c.PostForm("thumbnail")
 	channelId, _ := strconv.Atoi(c.PostForm("channel_id"))
 
-	summary, _ := stripmd.Strip(content) // 从 Markdown 中提取摘要
+	summary := stripmd.Strip(content) // 从 Markdown 中提取摘要
 	l := len(summary)
 	if l >= 200 {
 		summary = summary[:200]

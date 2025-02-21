@@ -37,11 +37,25 @@ func Router() {
 		web.GET("/", controller.AdminIndex)
 	}
 	{
-		//用户登录api
+		//channel
 		web.GET("/channel/list", controller.ListChannel)
 		web.GET("/channel/view", controller.ViewChannel)
 		web.GET("/channel/delete", controller.DeleteChannel)
 		web.POST("/channel/save", controller.SaveChannel)
+	}
+
+	{
+		//post
+		web.GET("/post/list", controller.ListPost)
+		web.GET("/post/view", controller.ViewPost)
+		web.GET("/post/delete", controller.DeletePost)
+		web.POST("/post/save", controller.SavePost)
+		web.POST("/post/upload", controller.UploadThumbnails)
+	}
+
+	{
+		//user
+		web.POST("/user/add", controller.Register)
 	}
 
 	// 启动服务

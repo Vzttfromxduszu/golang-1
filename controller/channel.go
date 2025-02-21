@@ -16,6 +16,7 @@ var channel service.ChannelService
 // channel list
 
 func ListChannel(c *gin.Context) {
+
 	channels := channel.GetChannelList()
 	gintemplate.HTML(c, http.StatusOK, "channel/list", gin.H{"clist": channels})
 }
