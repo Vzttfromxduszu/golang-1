@@ -28,7 +28,7 @@ func Router() {
 		Extension:    ".html",
 		Master:       "layouts/master",
 		DisableCache: true,
-	})
+	}) // 设置模板引擎,会应用于该路由组中的所有路由。
 
 	// 后台管理员前端接口
 	web := engine.Group("/admin", mw) // Group 是 gin 的路由组方法，可以将相同前缀的路由分组，这里是将后台路由分组, mw是中间件,用于设置模板引擎,会应用于该路由组中的所有路由。
@@ -55,7 +55,9 @@ func Router() {
 
 	{
 		//user
-		web.POST("/user/add", controller.Register)
+		web.POST("/user/register", controller.Register)
+		web.GET("/user/register", controller.GoRegister)
+		web.GET("/user/list", controller.ListUser)
 	}
 
 	// 启动服务

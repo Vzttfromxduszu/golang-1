@@ -1,0 +1,35 @@
+
+{{ define "content" }}
+<div class="content-wrapper">
+
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+
+        <form action="/admin/user/register" method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label">username</label>
+              <input type="text" id="username" value="{{.user.username}}">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">password</label>
+              <input type="password" id="password" value="{{.user.password}}">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">记住我</label>
+            </div>
+            <button type="submit" class="btn btn-primary">注册</button>
+          </form>
+          <!-- /.card -->
+        </div>
+      </div>
+
+
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+
+</div>
+{{end}}

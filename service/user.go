@@ -12,3 +12,9 @@ type UserService struct {
 func (u *UserService) Register(user models.User) int64 {
 	return global.Db.Table("users").Create(&user).RowsAffected
 }
+
+func (u *UserService) GetUserList() []models.User {
+	var users []models.User
+	global.Db.Find(&users)
+	return users
+}
