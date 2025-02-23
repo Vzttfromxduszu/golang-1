@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"fmt"
+	// "fmt"
 	"net/http"
 
 	models "github.com/Vzttfromxduszu/golang-1.git/model"
@@ -18,12 +18,16 @@ var user service.UserService
 func Register(c *gin.Context) {
 	// TODO
 	var user1 models.User
-	err := c.BindJSON(&user1)
-	if err != nil {
-		fmt.Printf("error: %v", err)
-	}
+	// username := c.PostForm("username")
+	// password := c.PostForm("password")
+	// user1 = models.User{
+	// 	Username: username,
+	// 	Password: password,
+	// }
+	c.ShouldBind(&user1)
+
 	user.Register(user1)
-	// c.Redirect(http.StatusFound, "/admin/user/list")
+	c.Redirect(http.StatusFound, "/admin/user/list")
 
 }
 

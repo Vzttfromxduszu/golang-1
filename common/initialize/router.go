@@ -41,6 +41,7 @@ func Router() {
 		web.GET("/channel/list", controller.ListChannel)
 		web.GET("/channel/view", controller.ViewChannel)
 		web.GET("/channel/delete", controller.DeleteChannel)
+		web.GET("/channel/save", controller.GoSaveChannel)
 		web.POST("/channel/save", controller.SaveChannel)
 	}
 

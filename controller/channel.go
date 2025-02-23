@@ -42,6 +42,10 @@ func DeleteChannel(c *gin.Context) {
 	c.Redirect(http.StatusMovedPermanently, "/admin/channel/list") // 这是一个 HTTP 状态码，表示永久重定向（301 Moved Permanently）。这意味着请求的资源已被永久移动到新的 URL。
 }
 
+func GoSaveChannel(c *gin.Context) {
+	gintemplate.HTML(c, http.StatusOK, "channel/view", gin.H{})
+}
+
 // add channel or update channel
 func SaveChannel(c *gin.Context) {
 	var chann models.Channel

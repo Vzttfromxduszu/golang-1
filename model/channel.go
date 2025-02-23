@@ -9,3 +9,8 @@ type Channel struct {
 	Status  int    `form:"status" gorm:"status"`
 	Weight  int    `form:"weight" gorm:"weight"`
 }
+
+// 指定表名为user
+func (Channel) TableName() string {
+	return "channels"
+}

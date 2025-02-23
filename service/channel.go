@@ -10,7 +10,7 @@ type ChannelService struct {
 
 // 添加
 func (cs *ChannelService) AddChannel(channel models.Channel) int64 {
-	return global.Db.Table("channel").Create(&channel).RowsAffected // RowsAffected：返回插入操作影响的行数，用于确认插入是否成功。
+	return global.Db.Table("channels").Create(&channel).RowsAffected // RowsAffected：返回插入操作影响的行数，用于确认插入是否成功。
 }
 
 // 更新

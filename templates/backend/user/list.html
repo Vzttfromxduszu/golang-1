@@ -28,27 +28,17 @@
               <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    <th>ID</th>
                     <th>用户名</th>
                     <th>密码</th>
-                    <th>状态</th>
-                    <th>权重</th>
-                    <th>操作</th>
+
                   </tr>
                 </thead>
                 <tbody>
-                  {{range $i, $c := .clist}}
+                  {{range $i, $c := .ulist}}
                   <tr>
-                    <td>{{$c.Id}}</td>
-                    <td>{{$c.Title}}</td>
-                    <td>{{$c.Slug}}</td>
-                    <td>{{$c.Status}}</td>
-                    <td>{{$c.Weight}}</td>
+                    <td>{{$c.Username}}</td>
+                    <td>{{$c.Password}}</td>
 
-                    <td>
-                      <a type="button" href="/admin/channel/view?id={{$c.Id}}" class="btn  btn-xs btn-primary">修改</a>
-                      <a type="button" href="/admin/channel/del?id={{$c.Id}}" class="btn   btn-xs btn-danger">删除</a>
-                    </td>
           
                   </tr>
                   {{end}}
