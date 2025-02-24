@@ -13,7 +13,7 @@ var indexPostService service.PostService
 
 // 后台首页
 func AdminIndex(c *gin.Context) {
-	gintemplate.HTML(c, http.StatusOK, "admin/index", gin.H{})
+	gintemplate.HTML(c, http.StatusOK, "index", gin.H{})
 }
 
 // 前台首页

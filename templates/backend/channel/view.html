@@ -14,9 +14,10 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
+            <div class="card-body">
             <form action="/admin/channel/save" method="post">
-              <input type="hidden" name="id" value="{{.channel.Id}}">
-              <div class="card-body">
+                <input type="text" name="id" value="{{.channel.Id}}">
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">标题</label>
                   <input type="text" class="form-control" name="title" value="{{.channel.Title}}" placeholder="请输入标题">

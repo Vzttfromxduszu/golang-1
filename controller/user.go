@@ -1,7 +1,7 @@
 package controller
 
 import (
-	// "fmt"
+	"fmt"
 	"net/http"
 
 	models "github.com/Vzttfromxduszu/golang-1.git/model"
@@ -38,4 +38,28 @@ func GoRegister(c *gin.Context) {
 func ListUser(c *gin.Context) {
 	users := user.GetUserList()
 	gintemplate.HTML(c, http.StatusOK, "user/list", gin.H{"ulist": users})
+}
+
+func GoLogin(c *gin.Context) {
+	gintemplate.HTML(c, http.StatusOK, "user/login", gin.H{})
+}
+
+func Login(c *gin.Context) {
+	username := c.PostForm("username")
+	password := c.PostForm("password")
+	fmt.Println(username)
+	u := user.Login(username)
+
+	if u.Username == "" {
+		c.HTML(200, "login.html", "用户名不存在！")
+		fmt.Println("用户名不存在！")
+	} else {
+		if u.Password != password {
+			fmt.Println("密码错误")
+			c.HTML(200, "login.html", "密码错误")
+		} else {
+			fmt.Println("登录成功")
+			c.Redirect(301, "/")
+		}
+	}
 }

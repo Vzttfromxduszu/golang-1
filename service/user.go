@@ -18,3 +18,9 @@ func (u *UserService) GetUserList() []models.User {
 	global.Db.Find(&users)
 	return users
 }
+
+func (u *UserService) Login(username string) models.User {
+	var user models.User
+	global.Db.Where("username=?", username).First(&user)
+	return user
+}

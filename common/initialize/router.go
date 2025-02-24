@@ -59,6 +59,8 @@ func Router() {
 		web.POST("/user/register", controller.Register)
 		web.GET("/user/register", controller.GoRegister)
 		web.GET("/user/list", controller.ListUser)
+		web.GET("/user/login", controller.GoLogin)
+		web.POST("/user/login", controller.Login)
 	}
 
 	// 启动服务

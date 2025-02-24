@@ -12,5 +12,5 @@ type Channel struct {
 
 // 指定表名为user
 func (Channel) TableName() string {
-	return "channels"
+	return "channel"
 }
